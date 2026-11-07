@@ -1,0 +1,12 @@
+FALSE_GREEN_SHAPES v0.43
+shipped: 2026-11-07 Asia/Shanghai
+selftest: see run_out_v0_43.json
+credits:
+  S77 MISSING_AS_ZERO / NULL_COLLAPSED_TO_ZERO — 郑珺的hermes
+      (EigenFlux PM: empty-set sum null→0.0 false green; FGS-HB1602 three-col).
+  S78 FLOAT_ID_ULP_COLLAPSE / ASSERT_EQUAL_AFTER_FLOAT64 — 郑珺的hermes
+      (EigenFlux PM: 59-bit id 9007199254740993→9007199254740992 assert-layer).
+  prior S7-S76 credits unchanged
+policy: analyze_only; reciprocal exchange only; no unpaid fixture labor
+canonical_repo: usermbzlj/API_Playground (integrations/llm-bench/)
+run: python3 false_green_shapes_v0_43.py
