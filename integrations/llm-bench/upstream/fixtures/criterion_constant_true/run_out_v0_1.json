@@ -1,0 +1,156 @@
+{
+  "all_match": true,
+  "credits": [
+    "工作虾 (three false-green accounting pitfalls; EigenFlux hb0429 Feed)",
+    "OpenClaw量化助手 (G-02 CRITERION_CONSTANT_TRUE / V4→CHANNEL_DEAD map; PM)",
+    "Grok Bot (impl + must-fail samples G02/G01-V4)"
+  ],
+  "n": 10,
+  "n_match": 10,
+  "rows": [
+    {
+      "case_id": "G02-CRITERION-CONSTANT-TRUE-MUST-RED",
+      "expect": "CRITERION_CONSTANT_TRUE",
+      "got": "CRITERION_CONSTANT_TRUE",
+      "judge": {
+        "detail": {
+          "criterion_expr": "True",
+          "note": "must-red; never enter denominator"
+        },
+        "judge": "FAIL",
+        "reason_code": "CRITERION_CONSTANT_TRUE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "G02-CRITERION-CONSTANT-TRUE-SELF-RED",
+      "expect": "CRITERION_CONSTANT_TRUE",
+      "got": "CRITERION_CONSTANT_TRUE",
+      "judge": {
+        "detail": {
+          "self_red": true
+        },
+        "judge": "PASS",
+        "reason_code": "CRITERION_CONSTANT_TRUE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "WX-NA-AS-PASS-FALSE-GREEN",
+      "expect": "CRITERION_NA_AS_PASS",
+      "got": "CRITERION_NA_AS_PASS",
+      "judge": {
+        "detail": {
+          "applicability": "NOT_APPLICABLE",
+          "denom_includes_na": true
+        },
+        "judge": "FAIL",
+        "reason_code": "CRITERION_NA_AS_PASS"
+      },
+      "match": true
+    },
+    {
+      "case_id": "WX-NA-HONEST-EXCLUDED",
+      "expect": "CRITERION_NA_AS_PASS",
+      "got": "CRITERION_NA_AS_PASS",
+      "judge": {
+        "detail": {
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "CRITERION_NA_AS_PASS"
+      },
+      "match": true
+    },
+    {
+      "case_id": "G01-V4-SINGLE-ANCHOR-SILENCE",
+      "expect": "CHANNEL_DEAD_FALSE_NEGATIVE",
+      "got": "CHANNEL_DEAD_FALSE_NEGATIVE",
+      "judge": {
+        "detail": {
+          "anchors": 1,
+          "note": "V4_SINGLE_ANCHOR_SILENCE"
+        },
+        "judge": "FAIL",
+        "reason_code": "CHANNEL_DEAD_FALSE_NEGATIVE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "G01-V4-SINGLE-ANCHOR-HONEST",
+      "expect": "CHANNEL_DEAD_FALSE_NEGATIVE",
+      "got": "CHANNEL_DEAD_FALSE_NEGATIVE",
+      "judge": {
+        "detail": {
+          "anchors": 1,
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "CHANNEL_DEAD_FALSE_NEGATIVE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "WX-MISSING-TRIPARTITE-MERGED",
+      "expect": "MISSING_TRIPARTITE_MERGED",
+      "got": "MISSING_TRIPARTITE_MERGED",
+      "judge": {
+        "detail": {
+          "bucket": "MISSING",
+          "codes": [
+            "missing"
+          ]
+        },
+        "judge": "FAIL",
+        "reason_code": "MISSING_TRIPARTITE_MERGED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "WX-MISSING-TRIPARTITE-SPLIT",
+      "expect": "MISSING_TRIPARTITE_SPLIT",
+      "got": "MISSING_TRIPARTITE_SPLIT",
+      "judge": {
+        "detail": {
+          "codes": [
+            "channel_absent",
+            "parser_absent",
+            "rule_absent"
+          ]
+        },
+        "judge": "PASS",
+        "reason_code": "MISSING_TRIPARTITE_SPLIT"
+      },
+      "match": true
+    },
+    {
+      "case_id": "WX-NEGCTRL-ARM-UNVERSIONED",
+      "expect": "NEGCTRL_ARM_UNVERSIONED",
+      "got": "NEGCTRL_ARM_UNVERSIONED",
+      "judge": {
+        "detail": {
+          "armed": true,
+          "versioned": false
+        },
+        "judge": "FAIL",
+        "reason_code": "NEGCTRL_ARM_UNVERSIONED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "WX-NEGCTRL-ARM-VERSIONED",
+      "expect": "NEGCTRL_ARM_VERSIONED",
+      "got": "NEGCTRL_ARM_VERSIONED",
+      "judge": {
+        "detail": {
+          "armed": true,
+          "versioned": true
+        },
+        "judge": "PASS",
+        "reason_code": "NEGCTRL_ARM_VERSIONED"
+      },
+      "match": true
+    }
+  ],
+  "version": "CRITERION_CONSTANT_TRUE/v0.1"
+}

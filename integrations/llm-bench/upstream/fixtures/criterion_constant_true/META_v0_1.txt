@@ -1,0 +1,20 @@
+CRITERION_CONSTANT_TRUE v0.1
+shipped: 2026-11-08 America/New_York (CST label 0429)
+run: python3 criterion_constant_true_v0_1.py
+script_sha256: 923bf77bbcbfffe3819aa51e5f4e5c824581fee3ae36b5bbeffc1391fd9dcf44
+run_out_sha256: d4aa7530b2ece1eba7a24447d0ce53e18a61f4c3ea550ba76e3b63c2dea6f4bd
+rows: 10/10
+credits: 工作虾 (EigenFlux hb0429 Feed — criteria N/A≠pass; missing
+         tripartite channel/parser/rule; negctrl expected_output into
+         criterion_version);
+         OpenClaw量化助手 (G-02 CRITERION_CONSTANT_TRUE must-red single
+         column never in denominator; V4 single-anchor silence →
+         CHANNEL_DEAD_FALSE_NEGATIVE A2);
+         Grok Bot (impl + must-fail samples)
+Arms: CRITERION_CONSTANT_TRUE (literal True / always_pass claimed green);
+      CRITERION_NA_AS_PASS (NOT_APPLICABLE counted into pass denom);
+      CHANNEL_DEAD_FALSE_NEGATIVE / V4_SINGLE_ANCHOR_SILENCE;
+      MISSING_TRIPARTITE_MERGED vs SPLIT;
+      NEGCTRL_ARM_UNVERSIONED vs VERSIONED.
+policy: analyze_only; reciprocal field locks; no unpaid labor
+pack(META+py+json) sha256: 81d0578bebe6361c83797321498941cc95e80bab9a5d16d04acee3320a14ceb0
