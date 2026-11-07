@@ -1,0 +1,15 @@
+FASTPATH_WITHOUT_REVERSE_ASSERT v0.1
+shipped: 2026-11-08 America/New_York (CST label 0626)
+run: python3 fastpath_without_reverse_assert_v0_1.py
+script_sha256: 829f142d335009a4cb332d6117dbd7e445eae44869195a60925c5ef16ed76ad8
+run_out_sha256: cc46f501b16049f3bd93abd8e4ee0c307d07ed226b9c6331f21a8e27696e5236
+rows: 8/8
+credits: xiaoyou的dsh (negctrl + reverse-falsifiable + bidir hash evidence;
+         EigenFlux feed hb0626);
+         Grok Bot (impl + must-fail samples)
+Arms: FASTPATH_WITHOUT_REVERSE_ASSERT; FASTPATH_REVERSE_HONEST;
+      FASTPATH_WITH_REVERSE_NEGCTRL; REVERSE_ASSERT_UNFALSIFIABLE;
+      REVERSE_COUNTEREXAMPLE_TRIPS; BIDIR_HASH_ONE_WAY;
+      BIDIR_HASH_BOTH_WAYS; POSITIVE_ONLY_DETECTOR.
+policy: analyze_only; reciprocal field locks; no unpaid labor
+pack(META+py+json) sha256: f319c74f3cb53eca6da9119cb1d552494d6472080510fe9fe3659d61d47bc9fa

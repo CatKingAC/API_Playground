@@ -1,0 +1,122 @@
+{
+  "all_match": true,
+  "credits": [
+    "xiaoyou的dsh (negctrl + reverse-falsifiable + bidir hash evidence)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "DSH-FASTPATH-NO-REVERSE-MUST-RED",
+      "expect": "FASTPATH_WITHOUT_REVERSE_ASSERT",
+      "got": "FASTPATH_WITHOUT_REVERSE_ASSERT",
+      "judge": {
+        "detail": {
+          "forward_ok": true,
+          "reverse_assert_ran": false
+        },
+        "judge": "FAIL",
+        "reason_code": "FASTPATH_WITHOUT_REVERSE_ASSERT"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-FASTPATH-REVERSE-HONEST",
+      "expect": "FASTPATH_WITHOUT_REVERSE_ASSERT",
+      "got": "FASTPATH_WITHOUT_REVERSE_ASSERT",
+      "judge": {
+        "detail": {
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "FASTPATH_WITHOUT_REVERSE_ASSERT"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-FASTPATH-WITH-REVERSE-NEGCTRL",
+      "expect": "FASTPATH_WITH_REVERSE_NEGCTRL",
+      "got": "FASTPATH_WITH_REVERSE_NEGCTRL",
+      "judge": {
+        "detail": {
+          "forward_ok": true,
+          "reverse_ok": true
+        },
+        "judge": "PASS",
+        "reason_code": "FASTPATH_WITH_REVERSE_NEGCTRL"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-REVERSE-UNFALSIFIABLE-MUST-RED",
+      "expect": "REVERSE_ASSERT_UNFALSIFIABLE",
+      "got": "REVERSE_ASSERT_UNFALSIFIABLE",
+      "judge": {
+        "detail": {
+          "counterexample_defined": false,
+          "reverse_ran": true
+        },
+        "judge": "FAIL",
+        "reason_code": "REVERSE_ASSERT_UNFALSIFIABLE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-REVERSE-COUNTEREXAMPLE-TRIPS",
+      "expect": "REVERSE_COUNTEREXAMPLE_TRIPS",
+      "got": "REVERSE_COUNTEREXAMPLE_TRIPS",
+      "judge": {
+        "detail": {
+          "counterexample_trips_reverse": true
+        },
+        "judge": "PASS",
+        "reason_code": "REVERSE_COUNTEREXAMPLE_TRIPS"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-BIDIR-HASH-ONE-WAY-MUST-RED",
+      "expect": "BIDIR_HASH_ONE_WAY",
+      "got": "BIDIR_HASH_ONE_WAY",
+      "judge": {
+        "detail": {
+          "a2b": true,
+          "b2a": false
+        },
+        "judge": "FAIL",
+        "reason_code": "BIDIR_HASH_ONE_WAY"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-BIDIR-HASH-BOTH-WAYS",
+      "expect": "BIDIR_HASH_BOTH_WAYS",
+      "got": "BIDIR_HASH_BOTH_WAYS",
+      "judge": {
+        "detail": {
+          "a2b": true,
+          "b2a": true
+        },
+        "judge": "PASS",
+        "reason_code": "BIDIR_HASH_BOTH_WAYS"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-POSITIVE-ONLY-DETECTOR-MUST-RED",
+      "expect": "POSITIVE_ONLY_DETECTOR",
+      "got": "POSITIVE_ONLY_DETECTOR",
+      "judge": {
+        "detail": {
+          "n_negctrl": 0,
+          "n_positive": 12
+        },
+        "judge": "FAIL",
+        "reason_code": "POSITIVE_ONLY_DETECTOR"
+      },
+      "match": true
+    }
+  ],
+  "version": "FASTPATH_WITHOUT_REVERSE_ASSERT/v0.1"
+}
