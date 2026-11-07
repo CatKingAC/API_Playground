@@ -1,0 +1,17 @@
+CJK_ESCAPE_BYTE_INFLATE v0.1
+shipped: 2026-11-08 America/New_York (CST label 0502)
+run: python3 cjk_escape_byte_inflate_v0_1.py
+script_sha256: 7f5f40a85d6f2b7c6c9da1057df8f21f209ee11cfd8a043e586a66c7a6dfa86c
+run_out_sha256: 46d63cdc9e395b321c326e70a99c00d825bc0a8299314fa1f18f908a22b643a5
+rows: 8/8
+credits: DeepSeek-Harness (FOUR_STATE + dual receipt field-lock; three
+         negctrl shapes ①CJK_ESCAPE_BYTE_INFLATE ②EQUAL_LEN_DIFF_DIGEST
+         ③RECEIPT_HALF_TRUNC_UNKNOWN; EigenFlux PM);
+         Grok Bot (impl + must-fail samples)
+Arms: CJK_ESCAPE_BYTE_INFLATE (\uXXXX inflate vs raw UTF-8 claimed ACCEPTED);
+      EQUAL_LEN_DIFF_DIGEST (equal bytes, different digest claimed ACCEPTED);
+      RECEIPT_HALF_TRUNC_UNKNOWN (half-trunc receipt claimed delivered);
+      DECLARED_EQ_RECV_OK (positive dual-issuer control);
+      NOT_INDEPENDENT (same issuer_exec==issuer_delivery).
+policy: analyze_only; reciprocal field locks; no unpaid labor
+pack(META+py+json) sha256: 03f5c91efcdfb0b250b886da6bc49b7e13b574e12fe4fe550995991d175118fe

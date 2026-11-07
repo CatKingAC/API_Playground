@@ -1,0 +1,124 @@
+{
+  "all_match": true,
+  "credits": [
+    "DeepSeek-Harness (FOUR_STATE + dual receipt field-lock; three negctrl shapes CJK_ESCAPE / EQUAL_LEN_DIFF / HALF_TRUNC)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "DSH-CJK-ESCAPE-INFLATE-MUST-RED",
+      "expect": "CJK_ESCAPE_BYTE_INFLATE",
+      "got": "CJK_ESCAPE_BYTE_INFLATE",
+      "judge": {
+        "detail": {
+          "char_count": 1,
+          "escape_bytes": 6,
+          "raw_bytes": 3
+        },
+        "judge": "FAIL",
+        "reason_code": "CJK_ESCAPE_BYTE_INFLATE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-CJK-ESCAPE-INFLATE-HONEST",
+      "expect": "CJK_ESCAPE_BYTE_INFLATE",
+      "got": "CJK_ESCAPE_BYTE_INFLATE",
+      "judge": {
+        "detail": {
+          "char_count": 1,
+          "escape_bytes": 6,
+          "honest": true,
+          "raw_bytes": 3
+        },
+        "judge": "PASS",
+        "reason_code": "CJK_ESCAPE_BYTE_INFLATE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-EQUAL-LEN-DIFF-DIGEST-MUST-RED",
+      "expect": "EQUAL_LEN_DIFF_DIGEST",
+      "got": "EQUAL_LEN_DIFF_DIGEST",
+      "judge": {
+        "detail": {
+          "digest_equal": false,
+          "size_equal": true
+        },
+        "judge": "FAIL",
+        "reason_code": "EQUAL_LEN_DIFF_DIGEST"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-EQUAL-LEN-DIFF-DIGEST-HONEST",
+      "expect": "EQUAL_LEN_DIFF_DIGEST",
+      "got": "EQUAL_LEN_DIFF_DIGEST",
+      "judge": {
+        "detail": {
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "EQUAL_LEN_DIFF_DIGEST"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-RECEIPT-HALF-TRUNC-MUST-UNKNOWN",
+      "expect": "RECEIPT_HALF_TRUNC_UNKNOWN",
+      "got": "RECEIPT_HALF_TRUNC_UNKNOWN",
+      "judge": {
+        "detail": {
+          "note": "half-trunc must be UNKNOWN not ACCEPTED",
+          "receipt_truncated": true
+        },
+        "judge": "FAIL",
+        "reason_code": "RECEIPT_HALF_TRUNC_UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-RECEIPT-HALF-TRUNC-HONEST",
+      "expect": "RECEIPT_HALF_TRUNC_UNKNOWN",
+      "got": "RECEIPT_HALF_TRUNC_UNKNOWN",
+      "judge": {
+        "detail": {
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "RECEIPT_HALF_TRUNC_UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-DECLARED-EQ-RECV-OK",
+      "expect": "DECLARED_EQ_RECV_OK",
+      "got": "DECLARED_EQ_RECV_OK",
+      "judge": {
+        "detail": {
+          "bytes": 40,
+          "digest": "3addf812ec1cf1e173fd2e61b6812be7b2ced4651807e248c27e0928918458ac"
+        },
+        "judge": "PASS",
+        "reason_code": "DECLARED_EQ_RECV_OK"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-SAME-ISSUER-NOT-INDEPENDENT",
+      "expect": "NOT_INDEPENDENT",
+      "got": "NOT_INDEPENDENT",
+      "judge": {
+        "detail": {
+          "issuer": "same-party"
+        },
+        "judge": "FAIL",
+        "reason_code": "NOT_INDEPENDENT"
+      },
+      "match": true
+    }
+  ],
+  "version": "CJK_ESCAPE_BYTE_INFLATE/v0.1"
+}
