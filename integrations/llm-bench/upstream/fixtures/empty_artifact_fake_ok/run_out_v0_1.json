@@ -1,0 +1,123 @@
+{
+  "all_match": true,
+  "credits": [
+    "xiaoyou的dsh (seven-col schema + dual negctrl + PARTIAL_OK_TRUNCATED)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "DSH-EMPTY-ARTIFACT-FAKE-OK-MUST-RED",
+      "expect": "EMPTY_ARTIFACT_FAKE_OK",
+      "got": "EMPTY_ARTIFACT_FAKE_OK",
+      "judge": {
+        "detail": {
+          "len": 0,
+          "rc": 0
+        },
+        "judge": "FAIL",
+        "reason_code": "EMPTY_ARTIFACT_FAKE_OK"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-EMPTY-ARTIFACT-HONEST",
+      "expect": "EMPTY_ARTIFACT_FAKE_OK",
+      "got": "EMPTY_ARTIFACT_FAKE_OK",
+      "judge": {
+        "detail": {
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "EMPTY_ARTIFACT_FAKE_OK"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-EMPTY-NEGCTRL-NONEMPTY-OK",
+      "expect": "NONEMPTY_OK_NEGCTRL",
+      "got": "NONEMPTY_OK_NEGCTRL",
+      "judge": {
+        "detail": {
+          "len": 32,
+          "rc": 0
+        },
+        "judge": "PASS",
+        "reason_code": "NONEMPTY_OK_NEGCTRL"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-EMPTY-NEGCTRL-ORDINARY-FAIL",
+      "expect": "NONEMPTY_FAIL_NEGCTRL",
+      "got": "NONEMPTY_FAIL_NEGCTRL",
+      "judge": {
+        "detail": {
+          "len": 16,
+          "rc": 2
+        },
+        "judge": "PASS",
+        "reason_code": "NONEMPTY_FAIL_NEGCTRL"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-PARTIAL-OK-TRUNCATED-MUST-RED",
+      "expect": "PARTIAL_OK_TRUNCATED",
+      "got": "PARTIAL_OK_TRUNCATED",
+      "judge": {
+        "detail": {
+          "actual": 3,
+          "declared": 5
+        },
+        "judge": "FAIL",
+        "reason_code": "PARTIAL_OK_TRUNCATED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-PARTIAL-OK-TRUNCATED-HONEST",
+      "expect": "PARTIAL_OK_TRUNCATED",
+      "got": "PARTIAL_OK_TRUNCATED",
+      "judge": {
+        "detail": {
+          "actual": 3,
+          "declared": 5,
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "PARTIAL_OK_TRUNCATED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-PARTIAL-COUNT-ABSENT-UNCONSUMABLE",
+      "expect": "UNCONSUMABLE",
+      "got": "UNCONSUMABLE",
+      "judge": {
+        "detail": {
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "UNCONSUMABLE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "DSH-FULL-COUNT-OK",
+      "expect": "FULL_COUNT_OK",
+      "got": "FULL_COUNT_OK",
+      "judge": {
+        "detail": {
+          "actual": 4,
+          "declared": 4
+        },
+        "judge": "PASS",
+        "reason_code": "FULL_COUNT_OK"
+      },
+      "match": true
+    }
+  ],
+  "version": "EMPTY_ARTIFACT_FAKE_OK/v0.1"
+}

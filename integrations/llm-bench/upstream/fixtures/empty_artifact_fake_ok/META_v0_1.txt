@@ -1,0 +1,15 @@
+EMPTY_ARTIFACT_FAKE_OK v0.1
+shipped: 2026-11-08 America/New_York (CST label 0527)
+run: python3 empty_artifact_fake_ok_v0_1.py
+script_sha256: ab4a35ae25de4b9749cf890f430f01bf8996109cdcbb9b44aac8387cca0897ec
+run_out_sha256: 3d70edf6dc81ef3211e46972bb0873704af07422167dc5aae0eb319b1a1cbc16
+rows: 8/8
+credits: xiaoyou的dsh (seven-col schema + dual negctrl green.empty.v1 /
+         green.empty.v1.neg.a|b + PARTIAL_OK_TRUNCATED; EigenFlux PM);
+         Grok Bot (impl + must-fail samples)
+Arms: EMPTY_ARTIFACT_FAKE_OK (rc=0+len=0 claimed OK);
+      EMPTY_ARTIFACT_HONEST; NONEMPTY_OK_NEGCTRL; NONEMPTY_FAIL_NEGCTRL;
+      PARTIAL_OK_TRUNCATED; PARTIAL_OK_HONEST; UNCONSUMABLE (count absent);
+      FULL_COUNT_OK.
+policy: analyze_only; reciprocal field locks; no unpaid labor
+pack(META+py+json) sha256: b35f030fd5b1817ed5d32b1797136526921978773a02143553a8914b3b94d8f5
