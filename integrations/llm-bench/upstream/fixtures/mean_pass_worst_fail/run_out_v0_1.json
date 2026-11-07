@@ -1,0 +1,129 @@
+{
+  "all_match": true,
+  "credits": [
+    "郑珺的hermes (naming + n/denom + MEASURED_ZERO≠UNMEASURED)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "HERMES-MEAN-PASS-WORST-FAIL-MUST-RED",
+      "expect": "MEAN_PASS_WORST_FAIL",
+      "got": "MEAN_PASS_WORST_FAIL",
+      "judge": {
+        "detail": {
+          "mean_pass": true,
+          "meta_ok": true,
+          "worst_pass": false
+        },
+        "judge": "FAIL",
+        "reason_code": "MEAN_PASS_WORST_FAIL"
+      },
+      "match": true
+    },
+    {
+      "case_id": "HERMES-MEAN-WORST-HONEST",
+      "expect": "MEAN_PASS_WORST_FAIL",
+      "got": "MEAN_PASS_WORST_FAIL",
+      "judge": {
+        "detail": {
+          "honest": true,
+          "meta_ok": true
+        },
+        "judge": "PASS",
+        "reason_code": "MEAN_PASS_WORST_FAIL"
+      },
+      "match": true
+    },
+    {
+      "case_id": "HERMES-MEAN-WORST-BOTH-PASS",
+      "expect": "MEAN_WORST_BOTH_PASS",
+      "got": "MEAN_WORST_BOTH_PASS",
+      "judge": {
+        "detail": {
+          "mean_pass": true,
+          "worst_pass": true
+        },
+        "judge": "PASS",
+        "reason_code": "MEAN_WORST_BOTH_PASS"
+      },
+      "match": true
+    },
+    {
+      "case_id": "HERMES-DENOM-COL-SPLIT-MUST-RED",
+      "expect": "DENOM_COL_SPLIT",
+      "got": "DENOM_COL_SPLIT",
+      "judge": {
+        "detail": {
+          "mean_denom": "delivered_items",
+          "worst_denom": "scored_items"
+        },
+        "judge": "FAIL",
+        "reason_code": "DENOM_COL_SPLIT"
+      },
+      "match": true
+    },
+    {
+      "case_id": "HERMES-DENOM-COL-ALIGNED",
+      "expect": "DENOM_COL_ALIGNED",
+      "got": "DENOM_COL_ALIGNED",
+      "judge": {
+        "detail": {
+          "denom_source": "scored_items"
+        },
+        "judge": "PASS",
+        "reason_code": "DENOM_COL_ALIGNED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "HERMES-ZERO-UNMEASURED-MERGED-MUST-RED",
+      "expect": "ZERO_UNMEASURED_MERGED",
+      "got": "ZERO_UNMEASURED_MERGED",
+      "judge": {
+        "detail": {
+          "codes": [
+            "MEASURED_ZERO",
+            "UNMEASURED"
+          ],
+          "collapsed": true
+        },
+        "judge": "FAIL",
+        "reason_code": "ZERO_UNMEASURED_MERGED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "HERMES-ZERO-UNMEASURED-SEPARATE",
+      "expect": "ZERO_UNMEASURED_SEPARATE",
+      "got": "ZERO_UNMEASURED_SEPARATE",
+      "judge": {
+        "detail": {
+          "codes": [
+            "MEASURED_ZERO",
+            "UNMEASURED"
+          ]
+        },
+        "judge": "PASS",
+        "reason_code": "ZERO_UNMEASURED_SEPARATE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "HERMES-MISSING-N-OR-DENOM-MUST-RED",
+      "expect": "MISSING_N_OR_DENOM",
+      "got": "MISSING_N_OR_DENOM",
+      "judge": {
+        "detail": {
+          "mean_meta": false,
+          "worst_meta": false
+        },
+        "judge": "FAIL",
+        "reason_code": "MISSING_N_OR_DENOM"
+      },
+      "match": true
+    }
+  ],
+  "version": "MEAN_PASS_WORST_FAIL/v0.1"
+}

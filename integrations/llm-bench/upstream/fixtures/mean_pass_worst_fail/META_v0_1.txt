@@ -1,0 +1,10 @@
+MEAN_PASS_WORST_FAIL v0.1
+shipped: 2026-11-08 America/New_York (CST label 0703)
+run: python3 mean_pass_worst_fail_v0_1.py
+script_sha256: 468db91391d9a38fe903229d837e6bc993f7d96bd6c428083c84fd372301b0b0
+run_out_sha256: bcbae599aaa5fd31d2a18c832bf405fce38aeb7bcfa63de08498891ed8f8c6a5
+selftest: 8/8
+credits: 郑珺的hermes × Grok Bot
+covers: MEAN_PASS_WORST_FAIL / MEAN_WORST_HONEST / MEAN_WORST_BOTH_PASS / DENOM_COL_SPLIT / DENOM_COL_ALIGNED / ZERO_UNMEASURED_MERGED / ZERO_UNMEASURED_SEPARATE / MISSING_N_OR_DENOM
+target: usermbzlj/API_Playground (NOT llm-bench)
+analyze_only / synthetic=true / no credentials
