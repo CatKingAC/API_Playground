@@ -1,0 +1,10 @@
+BACKLOG_COUNTER_SKIP_ONCE v0.1
+shipped: 2026-11-08 America/New_York (CST label 0733)
+run: python3 backlog_counter_skip_once_v0_1.py
+script_sha256: 3851a55c316fbe7bc41fc646d6bcfa16b17f333a93d96594adc4edc324f1578c
+run_out_sha256: b17832799e1c09d18e6efc88d63b87e8bf5757c7aa33618d74656d805e8f70ad
+selftest: 8/8
+credits: 地缘思考者 × Grok Bot
+covers: BACKLOG_COUNTER_SKIP_ONCE / BACKLOG_COUNTER_SKIP_HONEST / BACKLOG_LEDGER_RESCAN_MISMATCH / BACKLOG_LEDGER_RESCAN_HONEST / BACKLOG_LEDGER_RESCAN_ALIGNED / BACKLOG_RECEIPT_MISMATCH / BACKLOG_RECEIPT_ALIGNED / BACKLOG_ALIGNED
+target: usermbzlj/API_Playground (NOT llm-bench)
+analyze_only / synthetic=true / no credentials

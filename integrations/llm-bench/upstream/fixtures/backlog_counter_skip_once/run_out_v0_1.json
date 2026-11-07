@@ -1,0 +1,121 @@
+{
+  "all_match": true,
+  "credits": [
+    "地缘思考者 (naming + echo-vs-counter skip-once + ledger/rescan vs receipt question)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "GEO-COUNTER-SKIP-ONCE-MUST-RED",
+      "expect": "BACKLOG_COUNTER_SKIP_ONCE",
+      "got": "BACKLOG_COUNTER_SKIP_ONCE",
+      "judge": {
+        "detail": {
+          "counter_value": 4,
+          "echoed_backlog": 5,
+          "increment_events": 5
+        },
+        "judge": "FAIL",
+        "reason_code": "BACKLOG_COUNTER_SKIP_ONCE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "GEO-COUNTER-SKIP-HONEST",
+      "expect": "BACKLOG_COUNTER_SKIP_ONCE",
+      "got": "BACKLOG_COUNTER_SKIP_ONCE",
+      "judge": {
+        "detail": {
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "BACKLOG_COUNTER_SKIP_ONCE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "GEO-LEDGER-RESCAN-MISMATCH-MUST-RED",
+      "expect": "BACKLOG_LEDGER_RESCAN_MISMATCH",
+      "got": "BACKLOG_LEDGER_RESCAN_MISMATCH",
+      "judge": {
+        "detail": {
+          "ledger_remaining": 3,
+          "rescan_remaining": 4
+        },
+        "judge": "FAIL",
+        "reason_code": "BACKLOG_LEDGER_RESCAN_MISMATCH"
+      },
+      "match": true
+    },
+    {
+      "case_id": "GEO-LEDGER-RESCAN-HONEST",
+      "expect": "BACKLOG_LEDGER_RESCAN_MISMATCH",
+      "got": "BACKLOG_LEDGER_RESCAN_MISMATCH",
+      "judge": {
+        "detail": {
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "BACKLOG_LEDGER_RESCAN_MISMATCH"
+      },
+      "match": true
+    },
+    {
+      "case_id": "GEO-LEDGER-RESCAN-ALIGNED",
+      "expect": "BACKLOG_LEDGER_RESCAN_ALIGNED",
+      "got": "BACKLOG_LEDGER_RESCAN_ALIGNED",
+      "judge": {
+        "detail": {
+          "remaining": 2
+        },
+        "judge": "PASS",
+        "reason_code": "BACKLOG_LEDGER_RESCAN_ALIGNED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "GEO-RECEIPT-MISMATCH-MUST-RED",
+      "expect": "BACKLOG_RECEIPT_MISMATCH",
+      "got": "BACKLOG_RECEIPT_MISMATCH",
+      "judge": {
+        "detail": {
+          "counter_value": 10,
+          "receipt_count": 9
+        },
+        "judge": "FAIL",
+        "reason_code": "BACKLOG_RECEIPT_MISMATCH"
+      },
+      "match": true
+    },
+    {
+      "case_id": "GEO-RECEIPT-ALIGNED",
+      "expect": "BACKLOG_RECEIPT_ALIGNED",
+      "got": "BACKLOG_RECEIPT_ALIGNED",
+      "judge": {
+        "detail": {
+          "count": 8
+        },
+        "judge": "PASS",
+        "reason_code": "BACKLOG_RECEIPT_ALIGNED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "GEO-ALL-ALIGNED",
+      "expect": "BACKLOG_ALIGNED",
+      "got": "BACKLOG_ALIGNED",
+      "judge": {
+        "detail": {
+          "n": 6,
+          "remaining": 1
+        },
+        "judge": "PASS",
+        "reason_code": "BACKLOG_ALIGNED"
+      },
+      "match": true
+    }
+  ],
+  "version": "BACKLOG_COUNTER_SKIP_ONCE/v0.1"
+}
