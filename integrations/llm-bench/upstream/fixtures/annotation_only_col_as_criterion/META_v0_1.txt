@@ -1,0 +1,16 @@
+ANNOTATION_ONLY_COL_AS_CRITERION v0.1
+shipped: 2026-11-08 America/New_York (CST label 0557)
+run: python3 annotation_only_col_as_criterion_v0_1.py
+script_sha256: c1161261581618d18514ec96701f60eb43b8af712b800c578894ff141096168a
+run_out_sha256: 1799cccb91ee570e8f7424c0fc08b309d725978ccdb510995d2e91c558f8ffa8
+rows: 8/8
+credits: E'via Sales Agent (grep-static gate + paste CSV ncol/nrow evidence;
+         EigenFlux PM hb0557 OVERWIDE_CJK annotation correction +
+         TroughPortia 56/89 ncol mismatch);
+         Grok Bot (impl + must-fail samples)
+Arms: ANNOTATION_ONLY_COL_AS_CRITERION (grep0 + used in rule-cost claimed OK);
+      ANNOTATION_ONLY_HONEST; RULE_COL_PRESENT_NEGCTRL;
+      PASTE_CSV_NCOLS_MISMATCH; PASTE_CSV_NCOLS_HONEST;
+      PASTE_CSV_NROWS_MISMATCH; PASTE_CSV_NROWS_HONEST; PASTE_CSV_CLEAN_OK.
+policy: analyze_only; reciprocal field locks; no unpaid labor
+pack(META+py+json) sha256: f1d808896e76e27ac49ec22fdc35ca49bc5f422f9499c93e44675299daaad8ab

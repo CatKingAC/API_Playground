@@ -1,0 +1,152 @@
+{
+  "all_match": true,
+  "credits": [
+    "E'via Sales Agent (grep-static gate + paste CSV ncol/nrow evidence)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "EVIA-ANNOTATION-AS-CRITERION-MUST-RED",
+      "expect": "ANNOTATION_ONLY_COL_AS_CRITERION",
+      "got": "ANNOTATION_ONLY_COL_AS_CRITERION",
+      "judge": {
+        "detail": {
+          "hits": 0,
+          "tokens": [
+            "inside_longer_word",
+            "word_forming",
+            "left_boundary",
+            "CJK_CONJUNCTION",
+            "CJK_PREFIX_WORD",
+            "coarse"
+          ]
+        },
+        "judge": "FAIL",
+        "reason_code": "ANNOTATION_ONLY_COL_AS_CRITERION"
+      },
+      "match": true
+    },
+    {
+      "case_id": "EVIA-ANNOTATION-ONLY-HONEST",
+      "expect": "ANNOTATION_ONLY_COL_AS_CRITERION",
+      "got": "ANNOTATION_ONLY_COL_AS_CRITERION",
+      "judge": {
+        "detail": {
+          "hits": 0,
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "ANNOTATION_ONLY_COL_AS_CRITERION"
+      },
+      "match": true
+    },
+    {
+      "case_id": "EVIA-RULE-COL-PRESENT-NEGCTRL",
+      "expect": "RULE_COL_PRESENT_NEGCTRL",
+      "got": "RULE_COL_PRESENT_NEGCTRL",
+      "judge": {
+        "detail": {
+          "hits": 3
+        },
+        "judge": "PASS",
+        "reason_code": "RULE_COL_PRESENT_NEGCTRL"
+      },
+      "match": true
+    },
+    {
+      "case_id": "EVIA-PASTE-CSV-NCOLS-MISMATCH-MUST-RED",
+      "expect": "PASTE_CSV_NCOLS_MISMATCH",
+      "got": "PASTE_CSV_NCOLS_MISMATCH",
+      "judge": {
+        "detail": {
+          "declared_rows": 2,
+          "header_ncols": 3,
+          "mismatch_rows": 1,
+          "ncols_ok": false,
+          "nrows_ok": false,
+          "record_count": 3
+        },
+        "judge": "FAIL",
+        "reason_code": "PASTE_CSV_NCOLS_MISMATCH"
+      },
+      "match": true
+    },
+    {
+      "case_id": "EVIA-PASTE-CSV-NCOLS-HONEST",
+      "expect": "PASTE_CSV_NCOLS_MISMATCH",
+      "got": "PASTE_CSV_NCOLS_MISMATCH",
+      "judge": {
+        "detail": {
+          "declared_rows": 2,
+          "header_ncols": 3,
+          "honest": true,
+          "mismatch_rows": 1,
+          "ncols_ok": false,
+          "nrows_ok": false,
+          "record_count": 3
+        },
+        "judge": "PASS",
+        "reason_code": "PASTE_CSV_NCOLS_MISMATCH"
+      },
+      "match": true
+    },
+    {
+      "case_id": "EVIA-PASTE-CSV-NROWS-MISMATCH-MUST-RED",
+      "expect": "PASTE_CSV_NROWS_MISMATCH",
+      "got": "PASTE_CSV_NROWS_MISMATCH",
+      "judge": {
+        "detail": {
+          "declared_rows": 3,
+          "header_ncols": 2,
+          "mismatch_rows": 0,
+          "ncols_ok": true,
+          "nrows_ok": false,
+          "record_count": 2
+        },
+        "judge": "FAIL",
+        "reason_code": "PASTE_CSV_NROWS_MISMATCH"
+      },
+      "match": true
+    },
+    {
+      "case_id": "EVIA-PASTE-CSV-NROWS-HONEST",
+      "expect": "PASTE_CSV_NROWS_MISMATCH",
+      "got": "PASTE_CSV_NROWS_MISMATCH",
+      "judge": {
+        "detail": {
+          "declared_rows": 3,
+          "header_ncols": 2,
+          "honest": true,
+          "mismatch_rows": 0,
+          "ncols_ok": true,
+          "nrows_ok": false,
+          "record_count": 2
+        },
+        "judge": "PASS",
+        "reason_code": "PASTE_CSV_NROWS_MISMATCH"
+      },
+      "match": true
+    },
+    {
+      "case_id": "EVIA-PASTE-CSV-CLEAN-OK",
+      "expect": "PASTE_CSV_CLEAN_OK",
+      "got": "PASTE_CSV_CLEAN_OK",
+      "judge": {
+        "detail": {
+          "declared_rows": 2,
+          "header_ncols": 3,
+          "mismatch_rows": 0,
+          "ncols_ok": true,
+          "nrows_ok": true,
+          "record_count": 2
+        },
+        "judge": "PASS",
+        "reason_code": "PASTE_CSV_CLEAN_OK"
+      },
+      "match": true
+    }
+  ],
+  "version": "ANNOTATION_ONLY_COL_AS_CRITERION/v0.1"
+}
