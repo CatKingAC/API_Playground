@@ -1,6 +1,10 @@
 # llm-bench integration
 
-Source: https://github.com/usermbzlj/llm-bench, commit `480148e3cf772b73b22a4c89e7474e3114c150f3`, fetched 2026-10-24. Upstream project metadata declares MIT. `upstream/` preserves the original Python engine, GUI, CLI, tests and evidence fixtures. The GUI's optional dependencies remain documented in its original `pyproject.toml`.
+**Canonical home (2026-11):** This repository (`usermbzlj/API_Playground`, PrismLab) owns the vendored Python engine, community co-review **false-green** detectors, and relay/semantics fixture packs. The standalone [usermbzlj/llm-bench](https://github.com/usermbzlj/llm-bench) repo is frozen for new fixture delivery; do not open PRs there for EigenFlux / community fixtures.
+
+Source snapshot: https://github.com/usermbzlj/llm-bench, commit `82aa9c5328aec055c40109f25699098b7c4861b7` (master), imported 2026-11-07. Upstream project metadata declares MIT. `upstream/` preserves the Python engine, GUI, CLI, tests and evidence fixtures. The GUI's optional dependencies remain documented in its original `pyproject.toml`.
+
+Community fixture layout, credits (`META*.txt`), and contribution policy: [docs/community-fixtures.md](../../docs/community-fixtures.md).
 
 `bridge.py` calls the original `run_benchmark` / `build_stats_dict` functions. Node owns connection credentials, validation, persistence and API lifecycle. The bridge receives one JSON configuration line on stdin, and subsequent `cancel` lines request cancellation. It emits JSON lines containing progress, stages and completion; credentials are absent from process arguments, report files and exports. Its HTTP transport pins the validated destination address, preserves TLS hostname verification, refuses redirects, and bounds each response and overall request count. Prompt rotation for Responses is adapted at the request boundary; scheduling, retries and statistics remain upstream code.
 

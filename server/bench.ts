@@ -365,7 +365,7 @@ export async function startBenchmark(input: unknown): Promise<BenchRecord> {
     ),
     limits,
     stages: [],
-    source: 'usermbzlj/llm-bench@480148e3',
+    source: 'usermbzlj/llm-bench@82aa9c53',
   };
   persist(record, secrets);
   const child = spawn(runtimeCache.command, [...(runtimeCache.args ?? []), BRIDGE], {

@@ -27,6 +27,7 @@
     "test:fusion": "node --test scripts/test-fusion.ts",
     "test:gemini": "node --test scripts/test-gemini.ts",
     "test:bench": "node --disable-warning=ExperimentalWarning scripts/test-bench.ts",
+    "test:fixtures": "python3 integrations/llm-bench/run_fixture_selftests.py",
     "test:workspace": "node --disable-warning=ExperimentalWarning --test scripts/test-workspace.ts"
   },
   "dependencies": {
