@@ -2,7 +2,7 @@
 
 本地运行的多模态 API 游乐场。按厂商或玩法发现能力，从友好表单进入原生参数、实际请求与事件，再保存、复用和并排比较实验。优先国内服务，保留各家的协议与能力差异。
 
-融合了原 API Playground 的原生执行与本机持久化、PrismLab 的能力图谱与四层调用视图，以及 [usermbzlj/llm-bench](https://github.com/usermbzlj/llm-bench) 的真实性能引擎。源码来源、取舍与验收范围见 [融合说明](docs/fusion.md)。
+融合了原 API Playground 的原生执行与本机持久化、PrismLab 的能力图谱与四层调用视图，以及 vendored [llm-bench](https://github.com/usermbzlj/llm-bench) 性能引擎与 **社区 co-review fixture**（false-green、relay 语义等）。引擎与夹具均以本仓库 `integrations/llm-bench/` 为唯一交付面；独立 llm-bench 仓不再承接新 fixture。见 [融合说明](docs/fusion.md) 与 [社区 fixture](docs/community-fixtures.md)。
 
 ## 启动
 
@@ -80,7 +80,7 @@ npm run setup:bench
 
 只安装无界面引擎所需依赖，不启动第二套桌面窗口。可以通过 `LLM_BENCH_PYTHON` 指定已有解释器。打开 [性能评测](http://127.0.0.1:8787/#/bench) 查看运行环境。
 
-压测与单次多模态实验共用连接、代理规则及本地数据目录。性能结果单独保存，导入的旧报告不会变成原生操作的实测证据。引擎、CLI、GUI 与原有测试完整保存在 [integrations/llm-bench/upstream](integrations/llm-bench/upstream)，网页桥接说明见 [集成文档](integrations/llm-bench/README.md)。
+压测与单次多模态实验共用连接、代理规则及本地数据目录。性能结果单独保存，导入的旧报告不会变成原生操作的实测证据。引擎、CLI、GUI、社区 fixture 与原有测试保存在 [integrations/llm-bench/upstream](integrations/llm-bench/upstream)；网页桥接见 [集成文档](integrations/llm-bench/README.md)。stdlib fixture 自测：`python3 integrations/llm-bench/run_fixture_selftests.py`（详见 [社区 fixture](docs/community-fixtures.md)）。
 
 异步任务由本机服务轮询，页面刷新不丢；重启后继续跟踪未完成任务。临时网络或服务错误会退避重试，任务成功后的产物下载也可单独重试，无需重新提交生成。停止本地跟踪不一定取消上游计费。
 

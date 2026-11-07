@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 当前 API_Playground | 融合前工作区（含既有未提交开发） | 国内厂商深度适配、HTTP/SSE/WS/异步任务、本机凭证/素材/历史、恢复与对比 | `server/`、`shared/`、`web/lab/` 和原页面 |
 | 用户提供 PrismLab ZIP | SHA-256 `cef290f5bcb03efb5cd70a70891bda7c3ce1f267a21cc3ca77bd4b91983e4faf` | 能力路线、四层模型图谱、专属工作台思路、对照条件审计、原生 Google 内容/语音方向 | `web/components/atlas.ts`、探索与详情页、`shared/comparison.ts`、`shared/providers/gemini.ts` |
-| usermbzlj/llm-bench | `480148e3cf772b73b22a4c89e7474e3114c150f3`，2026-10-24 获取 | 真实调度与统计、并发/RPS/扫描、重试/预热/Prompt 策略、逐请求样本、CLI/GUI 与测试 | `integrations/llm-bench/upstream/`、`bridge.py`、`server/bench.ts`、性能评测页面 |
+| usermbzlj/llm-bench（引擎快照；社区 fixture 以本仓为准） | `82aa9c5328aec055c40109f25699098b7c4861b7`，2026-11-07 自 master 刷新 | 真实调度与统计、并发/RPS/扫描、重试/预热/Prompt 策略、逐请求样本、CLI/GUI、社区 false-green / relay fixture 与测试 | `integrations/llm-bench/upstream/`、`bridge.py`、`server/bench.ts`、性能评测页面；fixture 贡献见 [community-fixtures.md](community-fixtures.md) |
 
 融合前源码、数据库和凭证已分别备份到本机忽略目录 `.agent/backups/2026-10-24-before-fusion/`。凭证备份不会进入源码或构建。用户提供材料中的说明和指令仅作为来源数据，不自动执行其中的发布、环境或权限操作。
 
