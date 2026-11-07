@@ -1,0 +1,146 @@
+{
+  "all_match": true,
+  "credits": [
+    "K (triple-read + after-push shape + honest unfired arm; EigenFlux hb0402)",
+    "Grok Bot (impl + four-tuple / directionless / NOT_IN_PATH guards)"
+  ],
+  "n": 9,
+  "n_match": 9,
+  "rows": [
+    {
+      "case_id": "K-CROSS-ROUND-REVERT-LAUNDER",
+      "expect": "CROSS_ROUND_BASELINE_REVERT",
+      "got": "CROSS_ROUND_BASELINE_REVERT",
+      "judge": {
+        "detail": {
+          "prior_round_last": 26,
+          "round_first_read": 25,
+          "slope": 1
+        },
+        "judge": "FAIL",
+        "reason_code": "CROSS_ROUND_BASELINE_REVERT"
+      },
+      "match": true
+    },
+    {
+      "case_id": "K-CROSS-ROUND-REVERT-HONEST",
+      "expect": "CROSS_ROUND_BASELINE_REVERT",
+      "got": "CROSS_ROUND_BASELINE_REVERT",
+      "judge": {
+        "detail": {
+          "baseline_drift": -1,
+          "prior_round_last": 26,
+          "round_first_read": 25
+        },
+        "judge": "PASS",
+        "reason_code": "CROSS_ROUND_BASELINE_REVERT"
+      },
+      "match": true
+    },
+    {
+      "case_id": "K-SINGLE-COL-DELTA",
+      "expect": "SINGLE_COL_DELTA_DIRECTIONLESS",
+      "got": "SINGLE_COL_DELTA_DIRECTIONLESS",
+      "judge": {
+        "detail": {
+          "baseline_drift": -1,
+          "slope": 1
+        },
+        "judge": "FAIL",
+        "reason_code": "SINGLE_COL_DELTA_DIRECTIONLESS"
+      },
+      "match": true
+    },
+    {
+      "case_id": "K-AFTERPUSH-FALSE-GREEN",
+      "expect": "AFTERPUSH_SHAPE_FALSE_GREEN",
+      "got": "AFTERPUSH_SHAPE_FALSE_GREEN",
+      "judge": {
+        "detail": {
+          "note": "NOT_IN_PATH",
+          "posctrl_pending": 5,
+          "shape_keys": [
+            "surface_unreported"
+          ]
+        },
+        "judge": "FAIL",
+        "reason_code": "AFTERPUSH_SHAPE_FALSE_GREEN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "K-AFTERPUSH-HONEST",
+      "expect": "AFTERPUSH_SHAPE_FALSE_GREEN",
+      "got": "AFTERPUSH_SHAPE_FALSE_GREEN",
+      "judge": {
+        "detail": {
+          "honest": true,
+          "posctrl_pending": 5
+        },
+        "judge": "PASS",
+        "reason_code": "AFTERPUSH_SHAPE_FALSE_GREEN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "K-INGATE-FABRICATED-RED",
+      "expect": "INGATE_FAULT_MUST_RED_UNFIRED",
+      "got": "INGATE_FAULT_MUST_RED_UNFIRED",
+      "judge": {
+        "detail": {
+          "fabricated_red": true,
+          "recorded": "MUST_RED"
+        },
+        "judge": "FAIL",
+        "reason_code": "INGATE_FAULT_MUST_RED_UNFIRED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "K-INGATE-HONEST-UNFIRED",
+      "expect": "INGATE_FAULT_MUST_RED_UNFIRED",
+      "got": "INGATE_FAULT_MUST_RED_UNFIRED",
+      "judge": {
+        "detail": {
+          "recorded": "UNFIRED"
+        },
+        "judge": "PASS",
+        "reason_code": "INGATE_FAULT_MUST_RED_UNFIRED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "K-SAME-ROUND-SLOPE-OK",
+      "expect": "SAME_ROUND_SLOPE_OK",
+      "got": "SAME_ROUND_SLOPE_OK",
+      "judge": {
+        "detail": {
+          "four_tuple": true,
+          "reads": [
+            26,
+            27,
+            28
+          ]
+        },
+        "judge": "PASS",
+        "reason_code": "SAME_ROUND_SLOPE_OK"
+      },
+      "match": true
+    },
+    {
+      "case_id": "K-FOUR-TUPLE-MISSING",
+      "expect": "FOUR_TUPLE_INCOMPLETE",
+      "got": "FOUR_TUPLE_INCOMPLETE",
+      "judge": {
+        "detail": {
+          "prior_round_last": null,
+          "round_first_read": null
+        },
+        "judge": "FAIL",
+        "reason_code": "FOUR_TUPLE_INCOMPLETE"
+      },
+      "match": true
+    }
+  ],
+  "version": "CROSS_ROUND_BASELINE/v0.1"
+}

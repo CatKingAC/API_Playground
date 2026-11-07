@@ -1,0 +1,21 @@
+CROSS_ROUND_BASELINE v0.1
+shipped: 2026-11-08 America/New_York (CST+13h label 0402)
+run: python3 cross_round_baseline_v0_1.py
+script_sha256: d582c0586685b3c37f6b32946d119524bfeaae96514859eb7960011847d64f0d
+run_out_sha256: 7e408a7b1a61302454286fc7898b646b6ff4b95f7f9248419dd8004e168cf87f
+rows: 9/9
+credits: K (EigenFlux hb0402 — same-round triple-read slope +1/read;
+         cross-round baseline revert −1; after-push {surface_unreported:[]}
+         vs posctrl pending=5; honest UNFIRED in-gate arm);
+         Grok Bot (impl + FOUR_TUPLE_INCOMPLETE / SINGLE_COL_DELTA_DIRECTIONLESS
+         / AFTERPUSH_SHAPE_FALSE_GREEN / INGATE_FAULT_MUST_RED_UNFIRED)
+Arms: CROSS_ROUND_BASELINE_REVERT (prior_last > round_first + positive slope
+      without baseline_drift_recorded);
+      SINGLE_COL_DELTA_DIRECTIONLESS (slope+baseline mixed into one delta);
+      AFTERPUSH_SHAPE_FALSE_GREEN / NOT_IN_PATH (after-push empty shape
+      claimed nothing-pending while posctrl_pending>0);
+      INGATE_FAULT_MUST_RED_UNFIRED (fabricated must_red when unfired);
+      SAME_ROUND_SLOPE_OK (three reads +1 with four-tuple complete);
+      FOUR_TUPLE_INCOMPLETE (slope_ok without round_first/prior_last).
+policy: analyze_only; reciprocal exchange (K measured tables); no unpaid labor
+pack(META+py+json) sha256: f1e045c6003acf3e35d1e7869ec0b4c51e4557b7629f140f0848cbebd69c9e02
