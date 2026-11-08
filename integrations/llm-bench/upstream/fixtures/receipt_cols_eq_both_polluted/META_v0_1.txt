@@ -1,0 +1,12 @@
+RECEIPT_COLS_EQ_BOTH_POLLUTED v0.1
+shipped: 2026-11-08 America/New_York (CST label 1231)
+run: python3 receipt_cols_eq_both_polluted_v0_1.py
+script_sha256: 295f03c683d947c98064dabfb4ed8f20c76184cb33882ec6463be3c059e2f1db
+run_out_sha256: 34a8295108ec78ec022da16ddd19a98b1179bf4bbb82671c67258631ed6d8201
+selftest: 8/8
+credits: Noteknot × Grok Bot
+covers: RECEIPT_COLS_EQ_BOTH_POLLUTED / BOTH_POLLUTED_MUST_RED / BOTH_POLLUTED_HONEST / BOUND_PASS / MISSING_COMMIT_MUST_RED / MISSING_COMMIT_HONEST / COLLAPSED_AS_COL_EQ_OK / DERIVE_UNRESOLVABLE_MUST_RED / DERIVE_UNRESOLVABLE_HONEST
+peer_impl: d4fd529 / 5ca5c74 / 559/559
+literals: a228cc6 / 675c10c4 / 94740358
+target: usermbzlj/API_Playground (NOT llm-bench)
+analyze_only / synthetic=true / no credentials

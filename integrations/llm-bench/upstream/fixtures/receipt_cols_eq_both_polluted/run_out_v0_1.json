@@ -1,0 +1,171 @@
+{
+  "all_match": true,
+  "credits": [
+    "Noteknot (stronger arm: derive tree from commit, not column-equality; d4fd529 / 5ca5c74 / 559/559)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "RCEB-BOTH-POLLUTED-MUST-RED",
+      "expect": "BOTH_POLLUTED",
+      "got": "BOTH_POLLUTED",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "columns_equal": true,
+          "commit_derived_tree_digest": "94740358",
+          "declared_commit": "a228cc6",
+          "guard_mode": "col_eq_only",
+          "measured_tree_digest": "675c10c4",
+          "reasons": [
+            "MEASURED_NE_COMMIT_TREE",
+            "RECEIPT_COMMIT_TREE_NE_COMMIT"
+          ],
+          "recorded_commit_tree_digest": "675c10c4",
+          "recorded_state": null
+        },
+        "judge": "FAIL",
+        "reason_code": "BOTH_POLLUTED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCEB-BOTH-POLLUTED-HONEST",
+      "expect": "BOTH_POLLUTED",
+      "got": "BOTH_POLLUTED",
+      "judge": {
+        "detail": {
+          "columns_equal": true,
+          "commit_derived_tree_digest": "94740358",
+          "declared_commit": "a228cc6",
+          "guard_mode": "derive_tree_from_commit",
+          "honest": true,
+          "measured_tree_digest": "675c10c4",
+          "reasons": [
+            "MEASURED_NE_COMMIT_TREE",
+            "RECEIPT_COMMIT_TREE_NE_COMMIT"
+          ],
+          "recorded_commit_tree_digest": "675c10c4"
+        },
+        "judge": "PASS",
+        "reason_code": "BOTH_POLLUTED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCEB-BOUND-PASS",
+      "expect": "BOUND",
+      "got": "BOUND",
+      "judge": {
+        "detail": {
+          "bound": true,
+          "columns_equal": true,
+          "commit_derived_tree_digest": "94740358",
+          "declared_commit": "a228cc6",
+          "guard_mode": "derive_tree_from_commit",
+          "measured_tree_digest": "94740358",
+          "reasons": [],
+          "recorded_commit_tree_digest": "94740358"
+        },
+        "judge": "PASS",
+        "reason_code": "BOUND"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCEB-MISSING-COMMIT-MUST-RED",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "declared_commit": null,
+          "measured_tree_digest": "675c10c4",
+          "note": "receipt has no declared commit from which to derive a tree",
+          "recorded_state": null
+        },
+        "judge": "FAIL",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCEB-MISSING-COMMIT-HONEST",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "declared_commit": null,
+          "honest": true,
+          "measured_tree_digest": "675c10c4",
+          "note": "receipt has no declared commit from which to derive a tree"
+        },
+        "judge": "PASS",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCEB-COLLAPSED-AS-COL-EQ-OK",
+      "expect": "BOTH_POLLUTED",
+      "got": "BOTH_POLLUTED",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "columns_equal": true,
+          "commit_derived_tree_digest": "94740358",
+          "declared_commit": "a228cc6",
+          "guard_mode": "col_eq_only",
+          "measured_tree_digest": "675c10c4",
+          "reasons": [
+            "MEASURED_NE_COMMIT_TREE",
+            "RECEIPT_COMMIT_TREE_NE_COMMIT"
+          ],
+          "recorded_commit_tree_digest": "675c10c4",
+          "recorded_state": "COL_EQ"
+        },
+        "judge": "FAIL",
+        "reason_code": "BOTH_POLLUTED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCEB-DERIVE-UNRESOLVABLE-MUST-RED",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "declared_commit": "a228cc6",
+          "measured_tree_digest": "675c10c4",
+          "note": "commit tree could not be derived independently; treat as invalid",
+          "recorded_commit_tree_digest": "675c10c4",
+          "recorded_state": null
+        },
+        "judge": "FAIL",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCEB-DERIVE-UNRESOLVABLE-HONEST",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "declared_commit": "a228cc6",
+          "honest": true,
+          "measured_tree_digest": "675c10c4",
+          "note": "commit tree could not be derived independently; treat as invalid",
+          "recorded_commit_tree_digest": "675c10c4"
+        },
+        "judge": "PASS",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    }
+  ],
+  "version": "RECEIPT_COLS_EQ_BOTH_POLLUTED/v0.1"
+}
