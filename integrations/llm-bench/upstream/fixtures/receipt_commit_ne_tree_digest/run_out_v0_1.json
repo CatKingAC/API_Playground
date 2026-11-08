@@ -1,0 +1,170 @@
+{
+  "all_match": true,
+  "credits": [
+    "Noteknot (self-captured a228cc6 / 675c10c4 / 94740358 reading + selection-vs-runner-config question)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "RCNT-UNBOUND-MUST-RED",
+      "expect": "UNBOUND",
+      "got": "UNBOUND",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "commit_tree_digest": "94740358",
+          "current_tree_digest": "675c10c4",
+          "declared_commit": "a228cc6",
+          "guard_mode": "digest_eq_current_tree",
+          "measured_tree_digest": "675c10c4",
+          "recorded_state": null,
+          "runner_config_pinned": true,
+          "selection_pinned": true,
+          "weak_guard": true
+        },
+        "judge": "FAIL",
+        "reason_code": "UNBOUND"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCNT-UNBOUND-HONEST",
+      "expect": "UNBOUND",
+      "got": "UNBOUND",
+      "judge": {
+        "detail": {
+          "commit_tree_digest": "94740358",
+          "current_tree_digest": "675c10c4",
+          "declared_commit": "a228cc6",
+          "guard_mode": "digest_eq_current_tree",
+          "honest": true,
+          "measured_tree_digest": "675c10c4",
+          "runner_config_pinned": true,
+          "selection_pinned": true
+        },
+        "judge": "PASS",
+        "reason_code": "UNBOUND"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCNT-BOUND-PASS",
+      "expect": "BOUND",
+      "got": "BOUND",
+      "judge": {
+        "detail": {
+          "bound": true,
+          "commit_tree_digest": "94740358",
+          "current_tree_digest": "94740358",
+          "declared_commit": "a228cc6",
+          "guard_mode": "commit_binds_tree",
+          "measured_tree_digest": "94740358",
+          "runner_config_pinned": true,
+          "selection_pinned": true
+        },
+        "judge": "PASS",
+        "reason_code": "BOUND"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCNT-MISSING-COMMIT-MUST-RED",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "declared_commit": null,
+          "measured_tree_digest": "675c10c4",
+          "note": "receipt has no declared commit to bind",
+          "recorded_state": null
+        },
+        "judge": "FAIL",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCNT-MISSING-COMMIT-HONEST",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "declared_commit": null,
+          "honest": true,
+          "measured_tree_digest": "675c10c4",
+          "note": "receipt has no declared commit to bind"
+        },
+        "judge": "PASS",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCNT-SELECTION-WITHOUT-RUNNER-MUST-RED",
+      "expect": "UNBOUND_TUPLE",
+      "got": "UNBOUND_TUPLE",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "commit_tree_digest": "94740358",
+          "current_tree_digest": "94740358",
+          "declared_commit": "a228cc6",
+          "guard_mode": "commit_binds_tree",
+          "measured_tree_digest": "94740358",
+          "recorded_state": null,
+          "runner_config_pinned": false,
+          "selection_pinned": true
+        },
+        "judge": "FAIL",
+        "reason_code": "UNBOUND_TUPLE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCNT-SELECTION-WITHOUT-RUNNER-HONEST",
+      "expect": "UNBOUND_TUPLE",
+      "got": "UNBOUND_TUPLE",
+      "judge": {
+        "detail": {
+          "commit_tree_digest": "94740358",
+          "current_tree_digest": "94740358",
+          "declared_commit": "a228cc6",
+          "guard_mode": "commit_binds_tree",
+          "honest": true,
+          "measured_tree_digest": "94740358",
+          "runner_config_pinned": false,
+          "selection_pinned": true
+        },
+        "judge": "PASS",
+        "reason_code": "UNBOUND_TUPLE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "RCNT-COLLAPSED-AS-DIGEST-OK",
+      "expect": "UNBOUND",
+      "got": "UNBOUND",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "commit_tree_digest": "94740358",
+          "current_tree_digest": "675c10c4",
+          "declared_commit": "a228cc6",
+          "guard_mode": "digest_eq_current_tree",
+          "measured_tree_digest": "675c10c4",
+          "recorded_state": "DIGEST_MATCH",
+          "runner_config_pinned": true,
+          "selection_pinned": true,
+          "weak_guard": true
+        },
+        "judge": "FAIL",
+        "reason_code": "UNBOUND"
+      },
+      "match": true
+    }
+  ],
+  "version": "RECEIPT_COMMIT_NE_TREE_DIGEST/v0.1"
+}
