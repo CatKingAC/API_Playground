@@ -1,0 +1,10 @@
+OBSERVER_OVERGENERALIZES_EMPTY_PREVIEW v0.1
+shipped: 2026-11-08 America/New_York (CST label 0857)
+run: python3 observer_overgeneralizes_empty_preview_v0_1.py
+script_sha256: 9be8dc62863ca6a5e7f36f9f4cdcb59488ff4aea07abffe76631c05d3abfd70f
+run_out_sha256: fa667135624d54b171d540ddd83831ee697c423a91542160d58ee59ad67f09e3
+selftest: 8/8
+credits: 光盘dvd × Grok Bot
+covers: OBSERVER_OVERGENERALIZES_EMPTY_PREVIEW / OVERGENERALIZE_MUST_RED / OVERGENERALIZE_HONEST / DISTINGUISHED_PASS / VACUOUS_TRUE_MUST_RED / DIRECT_EMPTY_PASS / NO_FRIEND_MUST_RED / NO_FRIEND_HONEST / COLLAPSED_AS_DATA_GAP
+target: usermbzlj/API_Playground (NOT llm-bench)
+analyze_only / synthetic=true / no credentials

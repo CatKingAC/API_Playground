@@ -1,0 +1,167 @@
+{
+  "all_match": true,
+  "credits": [
+    "光盘dvd (self-correction + overgeneralization sample + sibling-empty vs friend-empty split)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "OOEP-OVERGENERALIZE-MUST-RED",
+      "expect": "OVERGENERALIZE",
+      "got": "OVERGENERALIZE",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "friend_item_id": "375057318271778816",
+          "friend_preview_empty": false,
+          "friend_preview_len": 180,
+          "note": "sibling empty preview is not evidence about the friend item",
+          "observed_via": "sibling_generalization",
+          "observer_claim": "friend_preview_empty",
+          "recorded_state": null,
+          "sibling_empty": true
+        },
+        "judge": "FAIL",
+        "reason_code": "OVERGENERALIZE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "OOEP-OVERGENERALIZE-HONEST",
+      "expect": "OVERGENERALIZE",
+      "got": "OVERGENERALIZE",
+      "judge": {
+        "detail": {
+          "friend_item_id": "375057318271778816",
+          "friend_preview_empty": false,
+          "friend_preview_len": 180,
+          "honest": true,
+          "observed_via": "sibling_generalization",
+          "observer_claim": "friend_preview_empty",
+          "sibling_empty": true
+        },
+        "judge": "PASS",
+        "reason_code": "OVERGENERALIZE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "OOEP-DISTINGUISHED-PASS",
+      "expect": "DISTINGUISHED",
+      "got": "DISTINGUISHED",
+      "judge": {
+        "detail": {
+          "direct": true,
+          "friend_item_id": "375057318271778816",
+          "friend_preview_empty": false,
+          "friend_preview_len": 180,
+          "observed_via": "friend_item",
+          "observer_claim": "friend_preview_nonempty",
+          "sibling_empty": true
+        },
+        "judge": "PASS",
+        "reason_code": "DISTINGUISHED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "OOEP-VACUOUS-TRUE-MUST-RED",
+      "expect": "OVERGENERALIZE",
+      "got": "OVERGENERALIZE",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "friend_item_id": "friend-empty-001",
+          "friend_preview_empty": true,
+          "friend_preview_len": 0,
+          "note": "empty friend preview must be read on the friend item, not inferred from siblings",
+          "observed_via": "sibling_generalization",
+          "observer_claim": "friend_preview_empty",
+          "recorded_state": null,
+          "sibling_empty": true
+        },
+        "judge": "FAIL",
+        "reason_code": "OVERGENERALIZE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "OOEP-DIRECT-EMPTY-PASS",
+      "expect": "EMPTY",
+      "got": "EMPTY",
+      "judge": {
+        "detail": {
+          "direct": true,
+          "friend_item_id": "friend-empty-001",
+          "friend_preview_empty": true,
+          "friend_preview_len": 0,
+          "observed_via": "friend_item",
+          "observer_claim": "friend_preview_empty",
+          "sibling_empty": true
+        },
+        "judge": "PASS",
+        "reason_code": "EMPTY"
+      },
+      "match": true
+    },
+    {
+      "case_id": "OOEP-NO-FRIEND-MUST-RED",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "friend_item_id": "375057318271778816",
+          "n_items": 1,
+          "note": "no friend item in the observed array",
+          "observer_claim": "friend_preview_empty",
+          "sibling_empty": true
+        },
+        "judge": "FAIL",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "OOEP-NO-FRIEND-HONEST",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "friend_item_id": "375057318271778816",
+          "honest": true,
+          "n_items": 1,
+          "note": "no friend item in the observed array",
+          "sibling_empty": true
+        },
+        "judge": "PASS",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "OOEP-COLLAPSED-AS-DATA-GAP",
+      "expect": "OVERGENERALIZE",
+      "got": "OVERGENERALIZE",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "friend_item_id": "375057318271778816",
+          "friend_preview_empty": false,
+          "friend_preview_len": 180,
+          "note": "sibling empty preview is not evidence about the friend item",
+          "observed_via": "sibling_generalization",
+          "observer_claim": "friend_preview_empty",
+          "recorded_state": "NEEDS_FEED_GET",
+          "sibling_empty": true
+        },
+        "judge": "FAIL",
+        "reason_code": "OVERGENERALIZE"
+      },
+      "match": true
+    }
+  ],
+  "version": "OBSERVER_OVERGENERALIZES_EMPTY_PREVIEW/v0.1"
+}
