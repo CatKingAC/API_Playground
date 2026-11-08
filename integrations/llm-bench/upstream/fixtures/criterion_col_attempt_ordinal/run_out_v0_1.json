@@ -1,0 +1,139 @@
+{
+  "all_match": true,
+  "credits": [
+    "码不停蹄 (minimal receipt triple + STALE vs UNKNOWN split + relative evidence_ref + batch x assertion coverage)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "MATB-STALE-MUST-RED",
+      "expect": "STALE",
+      "got": "STALE",
+      "judge": {
+        "detail": {
+          "attempt_ordinal": 6,
+          "observed_result": "PASS",
+          "server_high_water": 7
+        },
+        "judge": "FAIL",
+        "reason_code": "STALE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "MATB-STALE-HONEST",
+      "expect": "STALE",
+      "got": "STALE",
+      "judge": {
+        "detail": {
+          "attempt_ordinal": 6,
+          "honest": true,
+          "observed_result": "PASS",
+          "server_high_water": 7
+        },
+        "judge": "PASS",
+        "reason_code": "STALE"
+      },
+      "match": true
+    },
+    {
+      "case_id": "MATB-MISSING-ORDINAL-MUST-RED",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "missing": [
+            "attempt_ordinal"
+          ]
+        },
+        "judge": "FAIL",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "MATB-MISSING-HWM-MUST-RED",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "missing": [
+            "server_high_water"
+          ]
+        },
+        "judge": "FAIL",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "MATB-MISSING-HONEST",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "honest": true,
+          "missing": [
+            "attempt_ordinal"
+          ]
+        },
+        "judge": "PASS",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "MATB-MISSING-COLLAPSED-TO-STALE",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "missing": [
+            "attempt_ordinal"
+          ],
+          "note": "missing fields must be UNKNOWN, not STALE"
+        },
+        "judge": "FAIL",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "MATB-BOTH-MISSING-MUST-RED",
+      "expect": "UNKNOWN",
+      "got": "UNKNOWN",
+      "judge": {
+        "detail": {
+          "claimed_ok": true,
+          "missing": [
+            "attempt_ordinal",
+            "server_high_water"
+          ]
+        },
+        "judge": "FAIL",
+        "reason_code": "UNKNOWN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "MATB-ALIGNED-PASS",
+      "expect": "ALIGNED",
+      "got": "ALIGNED",
+      "judge": {
+        "detail": {
+          "attempt_ordinal": 7,
+          "observed_result": "PASS",
+          "server_high_water": 7
+        },
+        "judge": "PASS",
+        "reason_code": "ALIGNED"
+      },
+      "match": true
+    }
+  ],
+  "version": "CRITERION_COL_ATTEMPT_ORDINAL/v0.1"
+}

@@ -1,0 +1,10 @@
+CRITERION_COL_ATTEMPT_ORDINAL v0.1
+shipped: 2026-11-08 America/New_York (CST label 0825)
+run: python3 criterion_col_attempt_ordinal_v0_1.py
+script_sha256: b9af51d0f6af0b93c2a70ffc19f5a36d2eeaefc3a5159e094f789bafd71ed6a7
+run_out_sha256: ce77c7376af53f2dfe9d3da59ef8f46fa26d425bb0997924af1d028389282467
+selftest: 8/8
+credits: 码不停蹄 × Grok Bot
+covers: CRITERION_COL_ATTEMPT_ORDINAL / STALE_MUST_RED / STALE_HONEST / MISSING_ORDINAL_MUST_RED / MISSING_HWM_MUST_RED / MISSING_HONEST / MISSING_COLLAPSED_TO_STALE / BOTH_MISSING_MUST_RED / ALIGNED_PASS
+target: usermbzlj/API_Playground (NOT llm-bench)
+analyze_only / synthetic=true / no credentials
