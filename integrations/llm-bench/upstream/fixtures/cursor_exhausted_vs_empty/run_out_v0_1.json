@@ -1,0 +1,143 @@
+{
+  "all_match": true,
+  "credits": [
+    "rosa agent (naming + expected_verdict/must_not_trip lock + recompute-must-red semantics)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "ROSA-CURSOR-ADVANCE-WITHOUT-ITEM-MUST-RED",
+      "expect": "CURSOR_EXHAUSTED_VS_EMPTY",
+      "got": "CURSOR_EXHAUSTED_VS_EMPTY",
+      "judge": {
+        "detail": {
+          "hot_probes": [
+            "cursor_advanced_without_item"
+          ],
+          "missed": [
+            "cursor_advanced_without_item"
+          ]
+        },
+        "judge": "FAIL",
+        "reason_code": "CURSOR_EXHAUSTED_VS_EMPTY"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ROSA-CURSOR-ADVANCE-WITHOUT-ITEM-HONEST",
+      "expect": "CURSOR_EXHAUSTED_VS_EMPTY",
+      "got": "CURSOR_EXHAUSTED_VS_EMPTY",
+      "judge": {
+        "detail": {
+          "honest": true,
+          "hot_probes": [
+            "cursor_advanced_without_item"
+          ]
+        },
+        "judge": "PASS",
+        "reason_code": "CURSOR_EXHAUSTED_VS_EMPTY"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ROSA-RECEIPT-MISSING-MUST-RED",
+      "expect": "CURSOR_EXHAUSTED_VS_EMPTY",
+      "got": "CURSOR_EXHAUSTED_VS_EMPTY",
+      "judge": {
+        "detail": {
+          "hot_probes": [
+            "receipt_missing"
+          ],
+          "missed": [
+            "receipt_missing"
+          ]
+        },
+        "judge": "FAIL",
+        "reason_code": "CURSOR_EXHAUSTED_VS_EMPTY"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ROSA-EMPTY-ALLOWED",
+      "expect": "EMPTY_ALLOWED",
+      "got": "EMPTY_ALLOWED",
+      "judge": {
+        "detail": {
+          "items_returned": 0
+        },
+        "judge": "PASS",
+        "reason_code": "EMPTY_ALLOWED"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ROSA-RECEIPT-OTHER-RUN-MUST-RED",
+      "expect": "RECEIPT_SCOPED_TO_RUN",
+      "got": "RECEIPT_SCOPED_TO_RUN",
+      "judge": {
+        "detail": {
+          "hot_probes": [
+            "receipt_from_other_run"
+          ],
+          "missed": [
+            "receipt_from_other_run"
+          ]
+        },
+        "judge": "FAIL",
+        "reason_code": "RECEIPT_SCOPED_TO_RUN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ROSA-RECEIPT-OTHER-RUN-HONEST",
+      "expect": "RECEIPT_SCOPED_TO_RUN",
+      "got": "RECEIPT_SCOPED_TO_RUN",
+      "judge": {
+        "detail": {
+          "honest": true,
+          "hot_probes": [
+            "receipt_from_other_run"
+          ]
+        },
+        "judge": "PASS",
+        "reason_code": "RECEIPT_SCOPED_TO_RUN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ROSA-RUN-ID-REUSED-MUST-RED",
+      "expect": "RECEIPT_SCOPED_TO_RUN",
+      "got": "RECEIPT_SCOPED_TO_RUN",
+      "judge": {
+        "detail": {
+          "hot_probes": [
+            "run_id_reused"
+          ],
+          "missed": [
+            "run_id_reused"
+          ]
+        },
+        "judge": "FAIL",
+        "reason_code": "RECEIPT_SCOPED_TO_RUN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ROSA-ACCEPTED-UNDER-RUN",
+      "expect": "ACCEPTED_UNDER_RUN",
+      "got": "ACCEPTED_UNDER_RUN",
+      "judge": {
+        "detail": {
+          "current_run_id": "run-A",
+          "receipt_run_id": "run-A"
+        },
+        "judge": "PASS",
+        "reason_code": "ACCEPTED_UNDER_RUN"
+      },
+      "match": true
+    }
+  ],
+  "version": "CURSOR_EXHAUSTED_VS_EMPTY/v0.1"
+}

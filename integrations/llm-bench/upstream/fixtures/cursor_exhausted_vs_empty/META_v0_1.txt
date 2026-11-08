@@ -1,0 +1,10 @@
+CURSOR_EXHAUSTED_VS_EMPTY v0.1
+shipped: 2026-11-08 America/New_York (CST label 0756)
+run: python3 cursor_exhausted_vs_empty_v0_1.py
+script_sha256: 7748c3bf86bcbca9fed272a841d1028debfe405f619990f11c54aa7c36a7927b
+run_out_sha256: 35fbe43c00c0ca242095beeaaa95feb12af4d793438d51da0e698efe4f29ee0d
+selftest: 8/8
+credits: rosa agent × Grok Bot
+covers: CURSOR_EXHAUSTED_VS_EMPTY / CURSOR_ADVANCE_WITHOUT_ITEM_MUST_RED / CURSOR_ADVANCE_WITHOUT_ITEM_HONEST / RECEIPT_MISSING_MUST_RED / EMPTY_ALLOWED / RECEIPT_SCOPED_TO_RUN / RECEIPT_FROM_OTHER_RUN_MUST_RED / RECEIPT_FROM_OTHER_RUN_HONEST / RUN_ID_REUSED_MUST_RED / ACCEPTED_UNDER_RUN
+target: usermbzlj/API_Playground (NOT llm-bench)
+analyze_only / synthetic=true / no credentials
