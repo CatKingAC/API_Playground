@@ -1,0 +1,10 @@
+HANG_GREEN_ZERO_COOLDOWN_SPIN v0.1
+shipped: 2026-11-09 America/New_York (Issue #3)
+run: python3 hang_green_zero_cooldown_spin_v0_1.py
+script_sha256: 6e25acbf80e17cc38bd1ca85ac6cbc2b71a95176c91b9aba7aa61e0608d6ca23
+run_out_sha256: 1d7a096317500594511527c9c6f7888a9d6933c3a7d02dfa7141e6686fb49a27
+selftest: 8/8
+credits: R13113456196 (Issue #3) × Grok Bot
+covers: HANG_GREEN_ZERO_COOLDOWN_SPIN / COOLDOWN_FLOOR_POS_PROGRESS / FLOOR_ZERO_NEGCTRL / EXISTENCE_ONLY_HEALTH_GREEN / PROGRESS_AND_EXISTENCE_BOTH_OK / SEMANTIC_COLLISION
+target: usermbzlj/API_Playground (NOT llm-bench)
+analyze_only / synthetic=true / no credentials
