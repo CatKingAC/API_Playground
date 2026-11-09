@@ -1,0 +1,124 @@
+{
+  "all_match": true,
+  "credits": [
+    "R13113456196 (Issue #3 — HANG_GREEN_ZERO_COOLDOWN_SPIN / SEMANTIC_COLLISION)",
+    "Grok Bot (impl + must-fail samples)"
+  ],
+  "n": 8,
+  "n_match": 8,
+  "rows": [
+    {
+      "case_id": "ISSUE3-HANG-GREEN-ZERO-COOLDOWN-SPIN-MUST-RED",
+      "expect": "HANG_GREEN_ZERO_COOLDOWN_SPIN",
+      "got": "HANG_GREEN_ZERO_COOLDOWN_SPIN",
+      "judge": {
+        "detail": {
+          "existence_green": true,
+          "refire_delay_read": 0,
+          "spin_detected": true
+        },
+        "judge": "FAIL",
+        "reason_code": "HANG_GREEN_ZERO_COOLDOWN_SPIN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ISSUE3-HANG-GREEN-ZERO-COOLDOWN-HONEST",
+      "expect": "HANG_GREEN_ZERO_COOLDOWN_SPIN",
+      "got": "HANG_GREEN_ZERO_COOLDOWN_SPIN",
+      "judge": {
+        "detail": {
+          "honest": true
+        },
+        "judge": "PASS",
+        "reason_code": "HANG_GREEN_ZERO_COOLDOWN_SPIN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ISSUE3-COOLDOWN-FLOOR-POS-PROGRESS",
+      "expect": "COOLDOWN_FLOOR_POS_PROGRESS",
+      "got": "COOLDOWN_FLOOR_POS_PROGRESS",
+      "judge": {
+        "detail": {
+          "advancing": true,
+          "floor": 0.05
+        },
+        "judge": "PASS",
+        "reason_code": "COOLDOWN_FLOOR_POS_PROGRESS"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ISSUE3-FLOOR-ZERO-NEGCTRL-MUST-RED",
+      "expect": "FLOOR_ZERO_NEGCTRL",
+      "got": "FLOOR_ZERO_NEGCTRL",
+      "judge": {
+        "detail": {
+          "floor": 0,
+          "negctrl_must_red": true
+        },
+        "judge": "FAIL",
+        "reason_code": "FLOOR_ZERO_NEGCTRL"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ISSUE3-EXISTENCE-ONLY-HEALTH-GREEN-MUST-RED",
+      "expect": "EXISTENCE_ONLY_HEALTH_GREEN",
+      "got": "EXISTENCE_ONLY_HEALTH_GREEN",
+      "judge": {
+        "detail": {
+          "existence_green": true,
+          "progress_ok": false
+        },
+        "judge": "FAIL",
+        "reason_code": "EXISTENCE_ONLY_HEALTH_GREEN"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ISSUE3-PROGRESS-AND-EXISTENCE-BOTH-OK",
+      "expect": "PROGRESS_AND_EXISTENCE_BOTH_OK",
+      "got": "PROGRESS_AND_EXISTENCE_BOTH_OK",
+      "judge": {
+        "detail": {
+          "existence_green": true,
+          "progress_ok": true
+        },
+        "judge": "PASS",
+        "reason_code": "PROGRESS_AND_EXISTENCE_BOTH_OK"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ISSUE3-SEMANTIC-COLLISION-MUST-RED",
+      "expect": "SEMANTIC_COLLISION",
+      "got": "SEMANTIC_COLLISION",
+      "judge": {
+        "detail": {
+          "shared_label": "GREEN",
+          "spin": true
+        },
+        "judge": "FAIL",
+        "reason_code": "SEMANTIC_COLLISION"
+      },
+      "match": true
+    },
+    {
+      "case_id": "ISSUE3-SEMANTIC-COLLISION-HONEST",
+      "expect": "SEMANTIC_COLLISION",
+      "got": "SEMANTIC_COLLISION",
+      "judge": {
+        "detail": {
+          "honest": true,
+          "labels_split": true
+        },
+        "judge": "PASS",
+        "reason_code": "SEMANTIC_COLLISION"
+      },
+      "match": true
+    }
+  ],
+  "version": "HANG_GREEN_ZERO_COOLDOWN_SPIN/v0.1"
+}
